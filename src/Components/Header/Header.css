@@ -1,0 +1,28 @@
+.headerContainer {
+    background-image: linear-gradient(to right, rgb(255, 145, 20) , rgb(255, 178, 36));
+}
+.authContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    font-weight: 800;
+}
+.usernameStyle {
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.passwordStyle {
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+.loginButton {
+    background-image: linear-gradient(to bottom, #feefce, rgb(255, 208, 0));
+    border-radius: 5px; 
+    margin-right: 10px;
+    font-size: 14px;
+}
