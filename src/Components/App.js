@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import "./App.css";
 import Home from "./Home/Home";
 import Header from "./Header/Header";
-import { Switch, Route } from "react-router-dom";
+import Show from "./Show/Show";
+import Login from "./Login/Login";
+import Signup from "./Signup/Signup";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -13,16 +16,33 @@ class App extends Component {
         </header>
         <main>
           <Switch>
-
-            
-            {/* Home Page to Sign In */}
+            <Route
+              path="show/:id"
+              render={props => {
+                return <Show {...props} />
+              }}
+            />
+            {/* Sign-up Page */}
+            <Route
+              path="/signup"
+              render={props => {
+                return <Signup {...props} />;
+              }}
+            />
+            {/* Login Page */}
+            <Route
+              path="/sign"
+              render={props => {
+                return <Login {...props} />;
+              }}
+            />
+            {/* Home Page / main landingpage */}
             <Route
               path="/"
               render={props => {
                 return <Home {...props} />;
               }}
             />
-
             {/* routing */}
           </Switch>
         </main>

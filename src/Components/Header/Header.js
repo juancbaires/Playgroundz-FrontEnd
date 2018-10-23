@@ -16,7 +16,6 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
 const styles = theme => ({
   root: {
     width: '100%',
@@ -86,49 +85,41 @@ const styles = theme => ({
     },
   },
 });
-
 class PrimarySearchAppBar extends React.Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
   };
-
   handleProfileMenuOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
-
   handleMenuClose = () => {
     this.setState({ anchorEl: null });
     this.handleMobileMenuClose();
   };
-
   handleMobileMenuOpen = event => {
     this.setState({ mobileMoreAnchorEl: event.currentTarget });
   };
-
   handleMobileMenuClose = () => {
     this.setState({ mobileMoreAnchorEl: null });
   };
-
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
     const renderMenu = (
       <Menu
         anchorEl={anchorEl}
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         open={isMenuOpen}
-        onClose={this.handleMenuClose}
-      >
+        onClose={this.handleMenuClose}>
+        
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>RSVP</MenuItem>
       </Menu>
     );
-
     const renderMobileMenu = (
       <Menu
         anchorEl={mobileMoreAnchorEl}
@@ -161,7 +152,6 @@ class PrimarySearchAppBar extends React.Component {
         </MenuItem>
       </Menu>
     );
-
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -184,6 +174,19 @@ class PrimarySearchAppBar extends React.Component {
                 }}
               />
             </div>
+
+
+
+                {/* this is the username & password */}
+            <div className="loginNav">
+              <input className="username login" placeholder="Login" type="email" />
+              <input className="password login" placeholder="Password" type="password" />
+              <input className="submit" type="submit" placeholder="submit" />
+            </div>
+
+
+
+
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
@@ -217,10 +220,10 @@ class PrimarySearchAppBar extends React.Component {
       </div>
     );
   }
-}
-
+    }
+    
 PrimarySearchAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
+      classes: PropTypes.object.isRequired,
+  };
+  
 export default withStyles(styles)(PrimarySearchAppBar);
