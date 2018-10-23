@@ -31,7 +31,7 @@ class App extends Component {
             />
             {/* Login Page */}
             <Route
-              path="/sign"
+              path="/login"
               render={props => {
                 return <Login {...props} />;
               }}
