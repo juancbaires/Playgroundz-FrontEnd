@@ -177,14 +177,6 @@ class PrimarySearchAppBar extends React.Component {
 
 
 
-                {/* this is the username & password */}
-            <div className="loginNav">
-              <input className="username login" placeholder="Login" type="email" />
-              <input className="password login" placeholder="Password" type="password" />
-              <input className="submit" type="submit" placeholder="submit" />
-            </div>
-
-
 
 
             <div className={classes.grow} />
