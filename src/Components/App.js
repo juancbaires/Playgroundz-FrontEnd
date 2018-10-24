@@ -23,7 +23,7 @@ class App extends Component {
               }}
             /> */}
             <Route
-              path="show/:id"
+              path="/show"
               render={props => {
                 return <Show {...props} />
               }}
