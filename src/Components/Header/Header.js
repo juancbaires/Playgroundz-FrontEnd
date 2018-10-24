@@ -1,221 +1,149 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing.unit * 2,
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing.unit * 3,
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    width: theme.spacing.unit * 9,
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-    width: '100%',
-  },
-  inputInput: {
-    paddingTop: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit * 10,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200,
-    },
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
-});
-class PrimarySearchAppBar extends React.Component {
-  state = {
-    anchorEl: null,
-    mobileMoreAnchorEl: null,
-  };
-  handleProfileMenuOpen = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-  handleMenuClose = () => {
-    this.setState({ anchorEl: null });
-    this.handleMobileMenuClose();
-  };
-  handleMobileMenuOpen = event => {
-    this.setState({ mobileMoreAnchorEl: event.currentTarget });
-  };
-  handleMobileMenuClose = () => {
-    this.setState({ mobileMoreAnchorEl: null });
-  };
+import React, { Component } from "react";
+
+class Header extends Component {
   render() {
-    const { anchorEl, mobileMoreAnchorEl } = this.state;
-    const { classes } = this.props;
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-    const renderMenu = (
-      <Menu
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMenuOpen}
-        onClose={this.handleMenuClose}>
-        
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>RSVP</MenuItem>
-      </Menu>
-    );
-    const renderMobileMenu = (
-      <Menu
-        anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMobileMenuOpen}
-        onClose={this.handleMobileMenuClose}
-      >
-        <MenuItem>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-          <IconButton color="inherit">
-            <Badge badgeContent={11} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <p>Notifications</p>
-        </MenuItem>
-        <MenuItem onClick={this.handleProfileMenuOpen}>
-          <IconButton color="inherit">
-            <AccountCircle />
-          </IconButton>
-          <p>Profile</p>
-        </MenuItem>
-      </Menu>
-    );
     return (
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-              <MenuIcon />
-            </IconButton>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              Playgroundz
-            </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
+      <div>
+        <div class="MuiToolbar-root-47 MuiToolbar-regular-49 MuiToolbar-gutters-48">
+          <button
+            class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52 PrimarySearchAppBar-menuButton-3"
+            tabindex="0"
+            type="button"
+            aria-label="Open drawer"
+          >
+            <span class="MuiIconButton-label-56">
+              <svg
+                class="MuiSvgIcon-root-60"
+                focusable="false"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                role="presentation"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+              </svg>
+            </span>
+            <span class="MuiTouchRipple-root-130" />
+          </button>
+          <h6 class="MuiTypography-root-69 MuiTypography-h6-86 MuiTypography-colorInherit-98 MuiTypography-noWrap-95 PrimarySearchAppBar-title-4">
+            Playgroundz
+          </h6>
+          <div class="PrimarySearchAppBar-search-5">
+            <div class="PrimarySearchAppBar-searchIcon-6">
+              <svg
+                class="MuiSvgIcon-root-60"
+                focusable="false"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                role="presentation"
+              >
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                <path fill="none" d="M0 0h24v24H0z" />
+              </svg>
+            </div>
+            <div class="MuiInputBase-root-104 PrimarySearchAppBar-inputRoot-7">
+              <input
+                class="MuiInputBase-input-114 PrimarySearchAppBar-inputInput-8"
                 placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
+                type="text"
+                value=""
               />
             </div>
-
-
-
-
-
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
-                <Badge badgeContent={null} color="secondary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
-              <IconButton color="inherit">
-                <Badge badgeContent={1} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                aria-owns={isMenuOpen ? 'material-appbar' : null}
-                aria-haspopup="true"
-                onClick={this.handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            </div>
-            <div className={classes.sectionMobile}>
-              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                <MoreIcon />
-              </IconButton>
-            </div>
-          </Toolbar>
-        </AppBar>
-        {renderMenu}
-        {renderMobileMenu}
+          </div>
+          <div class="PrimarySearchAppBar-grow-2" />
+          <div class="PrimarySearchAppBar-sectionDesktop-9">
+            <button
+              class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
+              tabindex="0"
+              type="button"
+            >
+              <span class="MuiIconButton-label-56">
+                <span class="MuiBadge-root-121">
+                  <svg
+                    class="MuiSvgIcon-root-60"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    role="presentation"
+                  >
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    <path fill="none" d="M0 0h24v24H0z" />
+                  </svg>
+                  <span class="MuiBadge-badge-122 MuiBadge-colorSecondary-124" />
+                </span>
+              </span>
+              <span class="MuiTouchRipple-root-130" />
+            </button>
+            <button
+              class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
+              tabindex="0"
+              type="button"
+            >
+              <span class="MuiIconButton-label-56">
+                <span class="MuiBadge-root-121">
+                  <svg
+                    class="MuiSvgIcon-root-60"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    role="presentation"
+                  >
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+                  </svg>
+                  <span class="MuiBadge-badge-122 MuiBadge-colorSecondary-124">
+                    1
+                  </span>
+                </span>
+              </span>
+              <span class="MuiTouchRipple-root-130" />
+            </button>
+            <button
+              class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
+              tabindex="0"
+              type="button"
+              aria-haspopup="true"
+            >
+              <span class="MuiIconButton-label-56">
+                <svg
+                  class="MuiSvgIcon-root-60"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  role="presentation"
+                >
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                  <path fill="none" d="M0 0h24v24H0z" />
+                </svg>
+              </span>
+              <span class="MuiTouchRipple-root-130" />
+            </button>
+          </div>
+          <div class="PrimarySearchAppBar-sectionMobile-10">
+            <button
+              class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
+              tabindex="0"
+              type="button"
+              aria-haspopup="true"
+            >
+              <span class="MuiIconButton-label-56">
+                <svg
+                  class="MuiSvgIcon-root-60"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  role="presentation"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                </svg>
+              </span>
+              <span class="MuiTouchRipple-root-130" />
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
-    }
-    
-PrimarySearchAppBar.propTypes = {
-      classes: PropTypes.object.isRequired,
-  };
-  
-export default withStyles(styles)(PrimarySearchAppBar);
+}
+
+export default Header;

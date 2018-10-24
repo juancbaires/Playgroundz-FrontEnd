@@ -1,138 +1,118 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import SignupForm from './SignupForm';
+import React, { Component } from "react";
 
-const styles = theme => ({
-  appBar: {
-    position: 'relative',
-  },
-  layout: {
-    width: 'auto',
-    marginLeft: theme.spacing.unit * 2,
-    marginRight: theme.spacing.unit * 2,
-    [theme.breakpoints.up(600 + theme.spacing.unit * 2 * 2)]: {
-      width: 600,
-      marginLeft: 'auto',
-      marginRight: 'auto',
-    },
-  },
-  paper: {
-    marginTop: theme.spacing.unit * 3,
-    marginBottom: theme.spacing.unit * 3,
-    padding: theme.spacing.unit * 2,
-    [theme.breakpoints.up(600 + theme.spacing.unit * 3 * 2)]: {
-      marginTop: theme.spacing.unit * 6,
-      marginBottom: theme.spacing.unit * 6,
-      padding: theme.spacing.unit * 3,
-    },
-  },
-  stepper: {
-    padding: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 5}px`,
-  },
-  buttons: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-  button: {
-    marginTop: theme.spacing.unit * 3,
-    marginLeft: theme.spacing.unit,
-  },
-});
-
-const steps = 'Registration';
-
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <SignupForm />;
-    default:
-      throw new Error('Unknown step');
-  }
-}
-
-class Checkout extends React.Component {
-  state = {
-    activeStep: 0,
-  };
-
-  handleNext = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep + 1,
-    }));
-  };
-
-  handleBack = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep - 1,
-    }));
-  };
-
-  handleReset = () => {
-    this.setState({
-      activeStep: 0,
-    });
-  };
-
+class Signup extends Component {
   render() {
-    const { classes } = this.props;
-    const { activeStep } = this.state;
-
     return (
-      <React.Fragment>
-        <CssBaseline />
-        <AppBar position="absolute" color="default" className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap>
-              Login
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <main className={classes.layout}>
-          <Paper className={classes.paper}>
-            <Typography component="h1" variant="h4" align="center">
-              Create A Profile
-            </Typography>
-            <React.Fragment>
-              {activeStep === steps.length ? (
-                <React.Fragment>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  {getStepContent(activeStep)}
-                  <div className={classes.buttons}>
-                    {activeStep !== 0 && (
-                      <Button onClick={this.handleBack} className={classes.button}>
-                        Back
-                      </Button>
-                    )}
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={this.handleNext}
-                      className={classes.button}
-                    >
-                      {activeStep === steps.length - 1 ? 'Login' : 'Next'}
-                    </Button>
-                  </div>
-                </React.Fragment>
-              )}
-            </React.Fragment>
-          </Paper>
+      <div>
+        <main class="SignIn-layout-130">
+          <div class="MuiPaper-root-20 MuiPaper-elevation2-24 MuiPaper-rounded-21 SignIn-paper-131">
+            <div class="MuiAvatar-root-135 MuiAvatar-colorDefault-136 SignIn-avatar-132">
+              <svg
+                class="MuiSvgIcon-root-60"
+                focusable="false"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                role="presentation"
+              >
+                <g fill="none">
+                  <path d="M0 0h24v24H0V0z" />
+                  <path d="M0 0h24v24H0V0z" opacity=".87" />
+                </g>
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+              </svg>
+            </div>
+            <h1 class="MuiTypography-root-69 MuiTypography-h5-85">Register</h1>
+            <form class="SignIn-form-133">
+              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
+                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
+                  {/* Username */}
+                  <input
+                    aria-invalid="false"
+                    autocomplete="username"
+                    class="MuiInputBase-input-114 MuiInput-input-164"
+                    id="username"
+                    name="username"
+                    placeholder="Username"
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
+                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
+                  {/* Email */}
+                  <input
+                    aria-invalid="false"
+                    autocomplete="email"
+                    class="MuiInputBase-input-114 MuiInput-input-164"
+                    id="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
+                {/* Password */}
+                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
+                  <input
+                    aria-invalid="false"
+                    autocomplete="current-password"
+                    class="MuiInputBase-input-114 MuiInput-input-164 MuiInputBase-inputType-117 MuiInput-inputType-167"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required=""
+                    type="password"
+                  />
+                </div>
+              </div>
+              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
+                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
+                  {/* Phone */}
+                  <input
+                    aria-invalid="false"
+                    autocomplete="phone"
+                    class="MuiInputBase-input-114 MuiInput-input-164"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
+                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
+                  {/* Address */}
+                  <input
+                    aria-invalid="false"
+                    autocomplete="location"
+                    class="MuiInputBase-input-114 MuiInput-input-164"
+                    id="location"
+                    name="location"
+                    placeholder="Address"
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              {/* submit registeration */}
+              <button
+                class="MuiButtonBase-root-57 MuiButton-root-183 MuiButton-contained-194 MuiButton-containedPrimary-195 MuiButton-raised-197 MuiButton-raisedPrimary-198 MuiButton-fullWidth-208 SignIn-submit-134"
+                tabindex="0"
+                type="register"
+              >
+                <span class="MuiButton-label-184">Register</span>
+                <span class="MuiTouchRipple-root-209" />
+              </button>
+            </form>
+          </div>
         </main>
-      </React.Fragment>
+      </div>
     );
   }
 }
 
-Checkout.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Checkout);
+export default Signup;

@@ -16,6 +16,12 @@ class App extends Component {
         </header>
         <main>
           <Switch>
+            {/* <Route
+              path="/loginstyle"
+              render={props => {
+                return <LoginStyle {...props} />
+              }}
+            /> */}
             <Route
               path="show/:id"
               render={props => {
