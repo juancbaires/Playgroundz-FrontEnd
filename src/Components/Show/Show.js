@@ -47,7 +47,6 @@ class Show extends Component {
           <div
             class="MuiCardMedia-root-97 RecipeReviewCard-media-2"
             title="Contemplative Reptile"
-            style="background-image: url(&quot;/static/images/cards/paella.jpg&quot;);"
           />
           <div class="MuiCardContent-root-99">
             <p class="MuiTypography-root-44 MuiTypography-body1-53">
