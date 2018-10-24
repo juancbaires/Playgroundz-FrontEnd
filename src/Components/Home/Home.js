@@ -22,7 +22,7 @@ class Home extends Component {
                             <li key={evt.id}>{evt.sport}{" "}{evt.locationName}</li>
                             <li key={evt.id}>{" "}{evt.address.street}{evt.address.city}{evt.address.state}{evt.address.zip}</li>
                             <li key={evt.id}>{" "}{evt.eventDate}</li>
-                            <li key={evt.id}><img src={evt.locationImg}></img></li>
+                            <img src={evt.locationImg}></img>
                             <li key={evt.id}>{evt.age}</li>
                             <li key={evt.id}>{evt.rsvps.find(element => {
                                 return (
