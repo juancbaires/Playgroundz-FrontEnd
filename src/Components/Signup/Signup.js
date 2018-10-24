@@ -25,23 +25,9 @@ class Signup extends Component {
             <form class="SignIn-form-133">
               <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
                 <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
-                  {/* Username */}
-                  <input
-                    aria-invalid="false"
-                    autocomplete="username"
-                    class="MuiInputBase-input-114 MuiInput-input-164"
-                    id="username"
-                    name="username"
-                    placeholder="Username"
-                    required=""
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
-                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                   {/* Email */}
                   <input
+                    onChange={this.props.handleInput}
                     aria-invalid="false"
                     autocomplete="email"
                     class="MuiInputBase-input-114 MuiInput-input-164"
@@ -57,6 +43,7 @@ class Signup extends Component {
                 {/* Password */}
                 <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                   <input
+                    onChange={this.props.handleInput}
                     aria-invalid="false"
                     autocomplete="current-password"
                     class="MuiInputBase-input-114 MuiInput-input-164 MuiInputBase-inputType-117 MuiInput-inputType-167"
@@ -68,38 +55,10 @@ class Signup extends Component {
                   />
                 </div>
               </div>
-              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
-                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
-                  {/* Phone */}
-                  <input
-                    aria-invalid="false"
-                    autocomplete="phone"
-                    class="MuiInputBase-input-114 MuiInput-input-164"
-                    id="phone"
-                    name="phone"
-                    placeholder="Phone Number"
-                    required=""
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
-                <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
-                  {/* Address */}
-                  <input
-                    aria-invalid="false"
-                    autocomplete="location"
-                    class="MuiInputBase-input-114 MuiInput-input-164"
-                    id="location"
-                    name="location"
-                    placeholder="Address"
-                    required=""
-                    type="text"
-                  />
-                </div>
-              </div>
+
               {/* submit registeration */}
               <button
+                onClick={this.props.handleSignUp}
                 class="MuiButtonBase-root-57 MuiButton-root-183 MuiButton-contained-194 MuiButton-containedPrimary-195 MuiButton-raised-197 MuiButton-raisedPrimary-198 MuiButton-fullWidth-208 SignIn-submit-134"
                 tabindex="0"
                 type="register"

@@ -1498,3 +1498,9 @@ label + .MuiInput-formControl-157 {
   align-items: center;
   flex-direction: column;
 }
+
+.juan-noborder {
+  border: none;
+  font-size: 24px;
+  box-shadow: none;
+}

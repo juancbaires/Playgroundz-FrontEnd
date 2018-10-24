@@ -8,6 +8,7 @@ import Signup from "./Signup/Signup";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios"
 import Logout from "./Logout/Logout"
+
 class App extends Component {
   state = {
     email: "",
