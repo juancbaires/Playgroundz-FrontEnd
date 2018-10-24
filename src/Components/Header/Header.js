@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <div class="MuiToolbar-root-47 MuiToolbar-regular-49 MuiToolbar-gutters-48">
+        <div class="MuiToolbar-root-47 MuiToolbar-regular-49 MuiToolbar-gutters-48 MuiButton-contained-ezy MuiAppBar-colorPrimary-18">
           <button
             class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52 PrimarySearchAppBar-menuButton-3"
             tabindex="0"
