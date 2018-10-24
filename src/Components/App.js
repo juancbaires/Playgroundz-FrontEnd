@@ -5,41 +5,20 @@ import Header from "./Header/Header";
 import Show from "./Show/Show";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <div className="appBackground">
-        <header>
-          <Header />
-        </header>
+        <Header />
         <main>
           <Switch>
-            {/* <Route
-              path="/loginstyle"
-              render={props => {
-                return <LoginStyle {...props} />
-              }}
-            /> */}
-            <Route
-              path="/show"
-              render={props => {
-                return <Show {...props} />
-              }}
-            />
+            <Route path="/show" render={() => <Show data={this.state} />}/>
             {/* Sign-up Page */}
-            <Route
-              path="/signup"
-              render={props => {
-                return <Signup {...props} />;
-              }}
-            />
+            <Route path="/signup" render={props => {return <Signup {...props} />;}}/>
             {/* Login Page */}
-            <Route
-              path="/login"
-              render={props => {
-                return <Login {...props} />;
+            <Route path="/login" render={props => { return <Login {...props} />;
               }}
             />
             {/* Home Page / main landingpage */}
