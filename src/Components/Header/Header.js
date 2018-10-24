@@ -51,7 +51,7 @@ class Header extends Component {
             </div>
           </div>
           <div class="PrimarySearchAppBar-grow-2" />
-          <div class="PrimarySearchAppBar-sectionDesktop-9">
+          {/* <div class="PrimarySearchAppBar-sectionDesktop-9">
             <button
               class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
               tabindex="0"
@@ -117,7 +117,7 @@ class Header extends Component {
               </span>
               <span class="MuiTouchRipple-root-130" />
             </button>
-          </div>
+          </div> */}
           <div class="PrimarySearchAppBar-sectionMobile-10">
             <button
               class="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
