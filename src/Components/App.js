@@ -92,6 +92,8 @@ class App extends Component {
       }))
   }
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+
     return (
       <div className="appBackground">
         <Header />
@@ -104,7 +106,7 @@ class App extends Component {
             <Route path="/logout" render={() => <Logout isLoggedIn={this.state.isLoggedIn} handleLogOut={this.state.handleLogOut} />} />
             <Route path="/login" render={() => <Login isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleLogIn={this.handleLogIn} loginError={this.state.loginError} />} />
             {/* Home Page / main landingpage */}
-            <Route path="/" render={() => <Home event={this.state.event} />} />
+            <Route path="/" render={() => <Home isLoggedIn={this.state.isLoggedIn} />} />
           </Switch>
         </main>
       </div>
