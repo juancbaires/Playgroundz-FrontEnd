@@ -3,6 +3,7 @@ import EventList from '../EventList/EventList';
 import './Home.css';
 import Event from '../Event/Event';
 import { Route } from 'react-router-dom';
+import LandingPage from "../LandingPage/LandingPage"
 
 class Home extends Component {
 
@@ -21,25 +22,25 @@ class Home extends Component {
 
     render() {
         const isLoggedIn = this.props.isLoggedIn;
-            return (
-                <div>
-               { isLoggedIn ? (
-                   <div>
-                    <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
-                        <Route exact path="/" render={() => <EventList listOfEvents={this.state.event}/>}/>
-                        <Route exact path="/event/:id" render={() => <Event event={this.state.event}/>}/>
+        return (
+            <div>
+                {isLoggedIn ? (
+                    <div>
+                        <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
+                        <Route exact path="/" render={() => <EventList listOfEvents={this.state.event} />} />
+                        <Route exact path="/event/:id" render={() => <Event event={this.state.event} />} />
                     </div>
                 ) : (
-                    <div>
-                    <h1>TEST</h1>
-                    <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
-                        <Route exact path="/" render={() => <EventList listOfEvents={this.state.event}/>}/>
-                        <Route exact path="/event/:id" render={() => <Event event={this.state.event}/>}/>
-                    </div>
-                 )}
-                 </div>
-            
-            )
+                        <div>
+                            <LandingPage />
+                            <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
+                            <Route exact path="/" render={() => <EventList listOfEvents={this.state.event} />} />
+                            <Route exact path="/event/:id" render={() => <Event event={this.state.event} />} />
+                        </div>
+                    )}
+            </div>
+
+        )
     }
 }
 

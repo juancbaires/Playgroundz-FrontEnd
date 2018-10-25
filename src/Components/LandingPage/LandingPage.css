@@ -1,0 +1,43 @@
+.SportImage {
+    list-style: none;
+    height: 500px;
+    min-width: 900px;
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+    position: center;
+}
+ul {
+    margin: 0 auto;
+    padding-inline-start: unset;
+    padding: 20px;
+}
+
+.thumbs-wrapper {
+    display: none;
+}
+
+.theValues {
+    display: flex;
+    justify-content: space-around;
+}
+.transitionCarousel {
+    background-color: transparent;
+}
+
+.slideTitle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    font-size: 100px;
+    z-index: 5;
+    letter-spacing: 35px;
+    text-transform: uppercase;
+    text-shadow:0 0 15px rgba(0,0,0,0.7);
+}
+
+
+
