@@ -10,8 +10,8 @@ import axios from "axios"
 import Logout from "./Logout/Logout"
 import decode from "jwt-decode"
 
-const env = 'https://playgroundz-heroku.herokuapp.com';
-// const env = "http://localhost:4004"
+//const env = 'https://playgroundz-heroku.herokuapp.com';
+const env = "http://localhost:4004"
 
 class App extends Component {
   state = {

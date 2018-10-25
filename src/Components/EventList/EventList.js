@@ -4,25 +4,29 @@ import './EventList.css';
 const EventList = ({ listOfEvents }) => {
     const list = listOfEvents.map((event, i) => {
         console.log(event)
+        //    let bgImage = {event.locationImg}
         return (
             <li className="event-card" key={i}>
-                <img className="card-image" src={event.locationImg} alt=""/>
-                <p>{event.eventDate}</p>
-                <h2 className="card-h2">{event.sport} @ {event.locationName}</h2>
-                <p>{event.address.city}, {event.address.state} {event.address.zip}</p>
-                <div className="event-button-wrapper">
-                    <button className="event-list-button blue">info</button>
-                    <button className="event-list-button red">RSVP</button>
+                {/* <img className="card-image" src={event.locationImg} alt=""/> */}
+                <div className="bg-image" style={{ "backgroundImage": 'url(' + event.locationImg + ')' }}></div>
+                <div className="text-wrapper">
+                    <p>{event.eventDate}</p>
+                    <h2 className="card-h2">{event.sport} @ {event.locationName}</h2>
+                    <p>{event.address.city}, {event.address.state} {event.address.zip}</p>
+                    <div className="event-button-wrapper">
+                        <button className="event-list-button blue">info</button>
+                        <button className="event-list-button red">RSVP</button>
+                    </div>
                 </div>
-            </li>
+            </li >
         )
     })
     return (
-      <div>
-        <ul className="list-container">
-            {list}
-        </ul>
-      </div>
+        <div>
+            <ul className="list-container">
+                {list}
+            </ul>
+        </div>
     )
 }
 
