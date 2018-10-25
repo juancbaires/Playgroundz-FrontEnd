@@ -1510,4 +1510,5 @@ label + .MuiInput-formControl-157 {
   border: none;
   font-size: 24px;
   box-shadow: none;
+  outline: none;
 }
