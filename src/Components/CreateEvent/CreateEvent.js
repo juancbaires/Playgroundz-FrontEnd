@@ -1,9 +1,49 @@
-import React from "react";
+import React, { Component } from "react";
 import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
+import Axios from "axios";
+// const env = 'https://playgroundz-heroku.herokuapp.com';
+const env = "http://localhost:4004"
 
-const CreateEvent = (props) => {
-  return (
+class CreateEvent extends Component {
+  state = {
+    eventDate: null,
+    locationName: null,
+    sport: '',
+    street: null,
+    city: null,
+    state: null,
+    zip: null,
+    age: null,
+    locationImg: null,
+    rsvps: []
+  }
+
+  handleSubmit = (e) => {
+    Axios.post('http://localhost:4004/new', {
+      eventDate: this.state.eventDate,
+      locationName: this.state.locationName,
+      sport: this.state.sport,
+      street: this.state.street,
+      city: this.state.city,
+      state: this.state.state,
+      zip: this.state.zip,
+      age: this.state.age,
+      locationImg: this.state.locationImg
+    })
+    e.preventDefault()
+    console.log("SUBMISSION SUCCESS")
+  }
+
+  handleInput = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+
+  render() {
+    console.log(this.state)
+    return (
     <div>
       <main className="SignIn-layout-130">
         <div className="MuiPaper-root-20 MuiPaper-elevation2-24 MuiPaper-rounded-21 SignIn-paper-131">
@@ -28,14 +68,15 @@ const CreateEvent = (props) => {
             Create Local Event
           </h1>
           <label className="loginError" />
-          <form className="SignIn-form-133">
+          <form onSubmit={this.handleSubmit} className="SignIn-form-133">
             <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
               <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                 {/* Event Date */}
                 <input
+                  onChange={this.handleInput}
                   aria-invalid="true"
                   className="MuiInputBase-input-114 MuiInput-input-164"
-                  id="date"
+                  id="eventDate"
                   name="date"
                   placeholder="Date"
                   required=""
@@ -47,6 +88,7 @@ const CreateEvent = (props) => {
               <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                 {/* Event Location Image */}
                 <input
+                  onChange={this.handleInput}
                   aria-invalid="false"
                   className="MuiInputBase-input-114 MuiInput-input-164"
                   id="locationImg"
@@ -61,6 +103,7 @@ const CreateEvent = (props) => {
               <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                 {/* Event Location Name */}
                 <input
+                  onChange={this.handleInput}
                   aria-invalid="false"
                   className="MuiInputBase-input-114 MuiInput-input-164"
                   id="locationName"
@@ -75,17 +118,21 @@ const CreateEvent = (props) => {
             <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
               <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                 <select
+                  onChange={this.handleInput}
+                  id="sport"
                   name="sport"
                   className="MuiInputBase-input-114 MuiInput-input-164"
                 >
-                  <option value="Soccer"> Soccer</option>
-                  <option value="Basketball"> Basketball</option>
-                  <option value="Football"> Football</option>
-                  <option value="Running"> Running</option>
-                  <option value="Tennis"> Tennis</option>
-                  <option value="Golf"> Golf </option>
+                  <option >select sport...</option>
+                  <option value="Soccer">Soccer</option>
+                  <option >Basketball</option>
+                  <option value="Football">Football</option>
+                  <option value="Running">Running</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Golf">Golf</option>
                 </select>
                 <input
+                  onChange={this.handleInput}
                   aria-invalid="false"
                   className="MuiInputBase-input-114 MuiInput-input-164"
                   id="age"
@@ -100,29 +147,32 @@ const CreateEvent = (props) => {
             <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
               <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                 <input
+                  onChange={this.handleInput}
                   aria-invalid="false"
                   className="MuiInputBase-input-114 MuiInput-input-164"
                   id="street"
                   name="street"
                   placeholder="Street"
                   required=""
-                  type="number"
+                  type="text"
                 />
               </div>
             </div>
             <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
               <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                 <input
+                  onChange={this.handleInput}
                   aria-invalid="false"
                   autocomplete="city"
                   className="MuiInputBase-input-114 MuiInput-input-164"
-                  id="City"
-                  name="City"
+                  id="city"
+                  name="city"
                   placeholder="City"
                   required=""
                   type="text"
                 />
                 <input
+                  onChange={this.handleInput}
                   type="text"
                   aria-invalid="false"
                   autocomplete="state"
@@ -133,6 +183,7 @@ const CreateEvent = (props) => {
                   required=""
                 />
                 <input
+                  onChange={this.handleInput}
                   type=""
                   aria-invalid="false"
                   autocomplete="zip"
@@ -161,5 +212,6 @@ const CreateEvent = (props) => {
     </div>
   );
 };
+}
 
 export default CreateEvent;

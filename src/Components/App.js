@@ -6,11 +6,11 @@ import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import { Switch, Route } from "react-router-dom";
-import axios from "axios"
-import Logout from "./Logout/Logout"
+import axios from "axios";
+import Logout from "./Logout/Logout";
 
-//const env = 'https://playgroundz-heroku.herokuapp.com';
-const env = "http://localhost:4004"
+const env = 'https://playgroundz-heroku.herokuapp.com';
+// const env = "http://localhost:4004"
 
 class App extends Component {
   state = {
@@ -101,6 +101,6 @@ class App extends Component {
       </div>
     );
   }
-}
+};
 
 export default App;

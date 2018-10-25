@@ -2,10 +2,10 @@ import React from 'react';
 import './EventList.css';
 
 const EventList = ({ listOfEvents }) => {
-    const list = listOfEvents.map(event => {
+    const list = listOfEvents.map((event, i) => {
         console.log(event)
         return (
-            <li className="event-card">
+            <li className="event-card" key={i}>
                 <img className="card-image" src={event.locationImg} alt=""/>
                 <p>{event.eventDate}</p>
                 <h2 className="card-h2">{event.sport} @ {event.locationName}</h2>
