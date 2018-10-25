@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Home from "./Home/Home";
 import Header from "./Header/Header";
-import Event from "./Event/Event";
+import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import { Switch, Route } from "react-router-dom";
@@ -88,7 +88,7 @@ class App extends Component {
         <Header />
         <main>
           <Switch>
-            <Route path="/event" render={() => <Event event={this.state.event} />} />
+            <Route path="/create-event" render={() => <CreateEvent event={this.state} />} />
             {/* Sign-up Page */}
             <Route path="/signup" render={() => <Signup isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} signUpError={this.state.signUpError} />} />
             {/* Login Page */}
