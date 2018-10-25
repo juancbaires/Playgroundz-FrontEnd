@@ -5,6 +5,7 @@ import Header from "./Header/Header";
 import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import LandingPage from "./LandingPage/LandingPage"
 import { Switch, Route } from "react-router-dom";
 import axios from "axios"
 import Logout from "./Logout/Logout"
@@ -106,7 +107,7 @@ class App extends Component {
           <Route
               path="/landingpage"
               render={() => (
-                <Logout
+                <LandingPage
                   isLoggedIn={this.state.isLoggedIn}
                   handleLogOut={this.state.handleLogOut}
                 />
