@@ -1,6 +1,26 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+
 class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      logstatus: false
+    }
+  }
+
+  login = () => {
+    this.setState({
+      logstatus: true
+    })
+  }
+
+  logout = () => {
+    this.setState({
+      logstatus: false
+    })
+  }
+
   render() {
     return (
       <div>
@@ -76,11 +96,21 @@ class Header extends Component {
               <span class="MuiIconButton-label-154"></span>
               <span class="MuiTouchRipple-root-246">
               </span>SignUp</button></Link>
-          <Link to="/login">
+          
+          {this.state.logstatus ? (
+          <Link to="/logout" onClick={this.logout}>
+            <button class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder" tabindex="0" type="button" aria-haspopup="true">
+              <span class="MuiIconButton-label-154"></span>
+              <span class="MuiTouchRipple-root-246">
+              </span>Logout</button></Link>
+          ) : (
+
+          <Link to="/login" onClick={this.login}>
             <button class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder" tabindex="0" type="button" aria-haspopup="true">
               <span class="MuiIconButton-label-154"></span>
               <span class="MuiTouchRipple-root-246">
               </span>Login</button></Link>
+        )}
         </div>
       </div>
     );
