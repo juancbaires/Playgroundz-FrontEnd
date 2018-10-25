@@ -8,7 +8,7 @@ const EventList = ({ listOfEvents }) => {
         //    let bgImage = {event.locationImg}
         return (
             <li className="event-card" key={i}>
-                <img className="card-image" src={event.locationImg} alt=""/>
+                {/* <img className="card-image" src={event.locationImg} alt=""/> */}
                 <div className="bg-image" style={{ "backgroundImage": 'url(' + event.locationImg + ')' }}></div>
                 <div className="text-wrapper">
                     <p>{event.eventDate}</p>

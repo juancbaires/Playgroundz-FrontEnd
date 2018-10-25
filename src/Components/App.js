@@ -99,8 +99,6 @@ class App extends Component {
   
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
-
     return (
       <div className="appBackground">
         <Header />
