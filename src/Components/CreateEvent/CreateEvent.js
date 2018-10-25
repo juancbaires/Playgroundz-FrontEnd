@@ -20,24 +20,7 @@ class CreateEvent extends Component {
     age: null,
     rsvps: []
   }
-  //   {
-  //   "sport": "soccer",
-  //     "locationName": "LeDroit Park",
-  //       "address": {
-  //     "street": "123 Easy Street",
-  //       "city": "Washington",
-  //         "state": "DC",
-  //           "zip": "20002"
-  //   },
-  //   "eventDate": "11/16/2018",
-  //     "locationImg": "https://images.unsplash.com/photo-1508802449768-a389d1acbfcd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d0b3c33a69e64bb4345c31fafafaaa59&auto=format&fit=crop&w=1350&q=80",
-  //       "age": 10,
-  //         "rsvps": [
-  //           "Juan",
-  //           "Ez",
-  //           "Mike"
-  //         ]
-  // },
+
   handleSubmit = (e) => {
     Axios.post('https://playgroundz-heroku.herokuapp.com/new', {
       ...this.state
