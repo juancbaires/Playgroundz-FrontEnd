@@ -3,7 +3,7 @@ import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
 import Axios from "axios";
 // const env = 'https://playgroundz-heroku.herokuapp.com';
-const env = "http://localhost:4004"
+// const env = "http://localhost:4004"
 
 class CreateEvent extends Component {
   state = {
@@ -39,7 +39,7 @@ class CreateEvent extends Component {
   //         ]
   // },
   handleSubmit = (e) => {
-    Axios.post('http://localhost:4004/new', {
+    Axios.post('https://playgroundz-heroku.herokuapp.com/new', {
       ...this.state
     })
     e.preventDefault()
