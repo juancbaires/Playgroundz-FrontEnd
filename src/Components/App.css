@@ -1,5 +1,12 @@
 /*  */
+
 /* Sign In Box */
+.loginError{
+  color:red;
+}
+.signUpError {
+  color: red;
+}
 .SignIn-layout-130 {
   width: auto;
   display: block;

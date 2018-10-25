@@ -22,6 +22,7 @@ class Signup extends Component {
               </svg>
             </div>
             <h1 class="MuiTypography-root-69 MuiTypography-h5-85">Register</h1>
+            <label className="signUpError">{this.props.signUpError}</label>
             <form class="SignIn-form-133">
               <div class="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
                 <div class="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
