@@ -11,8 +11,8 @@ import axios from "axios"
 import Logout from "./Logout/Logout"
 import decode from "jwt-decode"
 
-//const env = 'https://playgroundz-heroku.herokuapp.com';
-const env = "http://localhost:4004";
+const env = 'https://playgroundz-heroku.herokuapp.com';
+// const env = "http://localhost:4004"
 
 class App extends Component {
   state = {
@@ -99,6 +99,8 @@ class App extends Component {
   
 
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+
     return (
       <div className="appBackground">
         <Header />
@@ -151,12 +153,13 @@ class App extends Component {
               )}
             />
             {/* Home Page / main landingpage */}
-            <Route path="/" render={() => <Home event={this.state.event} />} />
+            <Route path="/" render={() => <Home isLoggedIn={this.state.isLoggedIn} />} />
           </Switch>
         </main>
       </div>
     );
   }
-}
+};
+// try this f
 
 export default App;
