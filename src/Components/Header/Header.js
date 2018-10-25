@@ -7,7 +7,6 @@ class Header extends Component {
         <div className="MuiToolbar-root-47 MuiToolbar-regular-49 MuiToolbar-gutters-48 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 MikeLink1">
           <button
             className="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52 PrimarySearchAppBar-menuButton-3"
-            tabindex="0"
             type="button"
             aria-label="Open drawer"
           >
@@ -54,7 +53,6 @@ class Header extends Component {
           <div className="PrimarySearchAppBar-sectionMobile-10">
             <button
               className="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
-              tabindex="0"
               type="button"
               aria-haspopup="true"
             >

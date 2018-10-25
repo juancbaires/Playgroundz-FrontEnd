@@ -9,10 +9,8 @@ import { Switch, Route } from "react-router-dom";
 
 class App extends Component {
 
- 
 
   render() {
-    console.log(this.state)
     return (
       <div className="appBackground">
         <Header />
@@ -24,7 +22,7 @@ class App extends Component {
             {/* Login Page */}
             <Route path="/login" render={() => <Login data={this.state} />}/>
             {/* Home Page / main landingpage */}
-            <Route path="/" render={() => <Home event={this.state.event} />}/>
+            <Route path="/" render={() => <Home />}/>
           </Switch>
         </main>
       </div>
