@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EventList from '../EventList/EventList';
+import './Home.css';
 
 class Home extends Component {
 
@@ -19,7 +20,7 @@ class Home extends Component {
     render() {
         return(
             <div>
-                <h1>Upcoming Pickup Games</h1>
+                <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
                 <EventList listOfEvents={this.state.event}/>
             {/* <ul>
             <li key={evt.id}>{evt.sport}{" "}{evt.locationName}</li>

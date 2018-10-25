@@ -5,14 +5,15 @@ const EventList = ({ listOfEvents }) => {
     const list = listOfEvents.map(event => {
         console.log(event)
         return (
-            <li className="list-item-container">
+            <li className="event-card">
                 <img className="card-image" src={event.locationImg} alt=""/>
-                <h4>{event.eventDate}</h4>
-                <h3>{event.sport}</h3>
-                <h4>Location: </h4>
-                <p>{event.locationName}</p>
+                <p>{event.eventDate}</p>
+                <h2 className="card-h2">{event.sport} @ {event.locationName}</h2>
                 <p>{event.address.city}, {event.address.state} {event.address.zip}</p>
-                <button className="event-list-button">RSVP</button>
+                <div className="event-button-wrapper">
+                    <button className="event-list-button blue">info</button>
+                    <button className="event-list-button red">RSVP</button>
+                </div>
             </li>
         )
     })

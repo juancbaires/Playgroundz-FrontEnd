@@ -25,7 +25,7 @@ class Header extends Component {
             <span className="MuiTouchRipple-root-130" />
           </button>
           <h6 className="MuiTypography-root-69 MuiTypography-h6-86 MuiTypography-colorInherit-98 MuiTypography-noWrap-95 PrimarySearchAppBar-title-4">
-            Playgroundz
+            Pickup Games
           </h6>
           <div className="PrimarySearchAppBar-search-5">
             <div className="PrimarySearchAppBar-searchIcon-6">
