@@ -3,10 +3,14 @@ import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
 import ImageUploader from "react-images-upload"
 
+<<<<<<< HEAD
 
 
 const CreateEvent = props => {
   
+=======
+const CreateEvent = props => {
+>>>>>>> landingpage
   return (
     <div>
       <main className="SignIn-layout-130">
@@ -60,12 +64,21 @@ const CreateEvent = props => {
                   type="url"
                 />
               </div>
+<<<<<<< HEAD
               <ImageUploader
                 withIcon={true}
                 buttonText="Choose images"
                 imgExtension={[".jpg", ".gif", ".png", ".gif"]}
                 maxFileSize={5242880}
                 
+=======
+              <imageUploader
+                withIcon={true}
+                buttonText="Choose images"
+                onChange={this.onDrop}
+                imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                maxFileSize={5242880}
+>>>>>>> landingpage
               />
             </div>
             <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
