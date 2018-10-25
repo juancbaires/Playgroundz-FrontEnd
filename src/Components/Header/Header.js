@@ -7,7 +7,6 @@ class Header extends Component {
         <div className="MuiToolbar-root-47 MuiToolbar-regular-49 MuiToolbar-gutters-48 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 MikeLink1">
           <button
             className="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52 PrimarySearchAppBar-menuButton-3"
-            tabindex="0"
             type="button"
             aria-label="Open drawer"
           >
@@ -26,7 +25,7 @@ class Header extends Component {
             <span className="MuiTouchRipple-root-130" />
           </button>
           <h6 className="MuiTypography-root-69 MuiTypography-h6-86 MuiTypography-colorInherit-98 MuiTypography-noWrap-95 PrimarySearchAppBar-title-4">
-            Playgroundz
+            Pickup Games
           </h6>
           <div className="PrimarySearchAppBar-search-5">
             <div className="PrimarySearchAppBar-searchIcon-6">
@@ -54,7 +53,6 @@ class Header extends Component {
           <div className="PrimarySearchAppBar-sectionMobile-10">
             <button
               className="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52"
-              tabindex="0"
               type="button"
               aria-haspopup="true"
             >
