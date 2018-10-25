@@ -6,8 +6,9 @@ import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import { Switch, Route } from "react-router-dom";
-import axios from "axios";
-import Logout from "./Logout/Logout";
+import axios from "axios"
+import Logout from "./Logout/Logout"
+import decode from "jwt-decode"
 
 const env = 'https://playgroundz-heroku.herokuapp.com';
 // const env = "http://localhost:4004"
@@ -18,16 +19,19 @@ class App extends Component {
     password: "",
     isLoggedIn: false,
     signUpError: null,
-    loginError: null
+    loginError: null,
+    userID: null,
   }
   componentDidMount() {
     if (localStorage.token) {
       this.setState({
-        isLoggedIn: true
+        isLoggedIn: true,
+        userID: decode(localStorage.token)
       })
     } else {
       this.setState({
-        isLoggedIn: false
+        isLoggedIn: false,
+        userID: null
       })
     }
   }
@@ -36,7 +40,8 @@ class App extends Component {
     this.setState({
       email: "",
       password: "",
-      isLoggedIn: false
+      isLoggedIn: false,
+      userID: null
     })
     localStorage.clear()
   }
@@ -56,7 +61,10 @@ class App extends Component {
     })
       .then(response => {
         localStorage.token = response.data.token
-        this.setState({ isLoggedIn: true })
+        this.setState({
+          isLoggedIn: true,
+          userID: decode(localStorage.token)
+        })
       })
       .catch(err => this.setState({
         signUpError: err.response.data.message
@@ -72,17 +80,18 @@ class App extends Component {
       password: this.state.password
     })
       .then(response => {
+        console.log(decode(response.data.token))
         localStorage.token = response.data.token
         this.setState({
           isLoggedIn: true
         })
       })
+
       .catch(err => this.setState({
         loginError: err.response.data.message
       }))
   }
   render() {
-    console.log(this.state)
     return (
       <div className="appBackground">
         <Header />
