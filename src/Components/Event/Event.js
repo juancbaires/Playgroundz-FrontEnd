@@ -17,6 +17,7 @@ const Event = props => {
               viewBox="0 0 24 24"
               aria-hidden="true"
               role="presentation"
+              alt="signup"
             />
             <g fill="none">
               <path d="M0 0h24v24H0V0z" />
