@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom"
 class Header extends Component {
   render() {
     return (
@@ -71,6 +71,16 @@ class Header extends Component {
               <span className="MuiTouchRipple-root-130" />
             </button>
           </div>
+          <Link to="/signup">
+            <button class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder" tabindex="0" type="button" aria-haspopup="true">
+              <span class="MuiIconButton-label-154"></span>
+              <span class="MuiTouchRipple-root-246">
+              </span>SignUp</button></Link>
+          <Link to="/login">
+            <button class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder" tabindex="0" type="button" aria-haspopup="true">
+              <span class="MuiIconButton-label-154"></span>
+              <span class="MuiTouchRipple-root-246">
+              </span>Login</button></Link>
         </div>
       </div>
     );
