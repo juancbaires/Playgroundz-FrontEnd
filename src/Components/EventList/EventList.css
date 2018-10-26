@@ -5,9 +5,11 @@ ul {
 .list-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .event-button-wrapper {
     display: flex;
+    justify-content: center;
 }
 .red {
     padding: 10px;
@@ -30,29 +32,30 @@ ul {
     align-items: center;
     margin: 20px 20px;
     padding: 0 0 5px 0;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
     transition: 0.3s;
     background-color: rgba(255,255,255,1);
     max-width: 300px; 
 }
 .event-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    background-color: rgba(0, 162, 255, 0.1);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    background-color: rgb(242, 248, 255);
 }
-/* .card-image {
-    max-width: 300px;
-} */
-.card-h2 {
+.card-image {
+   width: 100%;
+   height: 200px;
+}
+.card-h3 {
     margin: 0;
 }
 
-.bg-image {
+/* .bg-image {
     width:100%;
     height:300px;
     background-size:cover;
     background-repeat:no-repeat;
-}
+} */
 
 .text-wrapper {
-    padding: 0 30px 5px 30px;
+    padding: 0 30px 10px 30px;
 }

@@ -12,12 +12,10 @@ class CreateEvent extends Component {
   state = {
     sport: '',
     locationName: null,
-    address: {
-      street: null,
-      city: null,
-      state: null,
-      zip: null
-    },
+    street: "",
+    city: "",
+    state: "",
+    zip: "",
     eventDate: null,
     locationImg: null,
     age: null,
@@ -25,11 +23,10 @@ class CreateEvent extends Component {
   }
 
   handleSubmit = (e) => {
-    Axios.post('https://playgroundz-heroku.herokuapp.com/new', {
-      ...this.state
-    })
     e.preventDefault()
-    console.log("SUBMISSION SUCCESS")
+    Axios.post('http://localhost:4004/new', this.state).then(createdPost => {
+      console.log(createdPost)
+    })
   }
 
   handleInput = (e) => {
@@ -38,8 +35,8 @@ class CreateEvent extends Component {
     })
   }
 
+
   render() {
-    console.log(this.state)
     return (
       <div>
         <main className="SignIn-layout-130">
@@ -65,7 +62,7 @@ class CreateEvent extends Component {
               Create Local Event
           </h1>
             <label className="loginError" />
-            <form onSubmit={this.handleSubmit} className="SignIn-form-133">
+            <form className="SignIn-form-133" onSubmit={this.handleSubmit}>
               <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
                 <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                   {/* Event Date */}
@@ -78,6 +75,7 @@ class CreateEvent extends Component {
                     placeholder="Date"
                     required=""
                     type="date"
+                    value={this.state.eventDate}
                   />
                 </div>
               </div>
@@ -93,6 +91,7 @@ class CreateEvent extends Component {
                     placeholder="Location Image URL"
                     required=""
                     type="url"
+                    value={this.state.locationImg}
                   />
                 </div>
               </div>
@@ -109,6 +108,7 @@ class CreateEvent extends Component {
                     placeholder="Location Name"
                     required=""
                     type="text"
+                    value={this.state.locationName}
                   />
                 </div>
               </div>
@@ -120,6 +120,7 @@ class CreateEvent extends Component {
                     id="sport"
                     name="sport"
                     className="MuiInputBase-input-114 MuiInput-input-164"
+                    value={this.state.sport}
                   >
                     <option >select sport...</option>
                     <option value="Soccer">Soccer</option>
@@ -138,6 +139,7 @@ class CreateEvent extends Component {
                     placeholder="Age Group"
                     required=""
                     type="text"
+                    value={this.state.age}
                   />
                 </div>
               </div>
@@ -153,6 +155,7 @@ class CreateEvent extends Component {
                     placeholder="Street"
                     required=""
                     type="text"
+                    value={this.state.street}
                   />
                 </div>
               </div>
@@ -168,6 +171,7 @@ class CreateEvent extends Component {
                     placeholder="City"
                     required=""
                     type="text"
+                    value={this.state.city}
                   />
                   <input
                     onChange={this.handleInput}
@@ -179,6 +183,7 @@ class CreateEvent extends Component {
                     name="state"
                     placeholder="State"
                     required=""
+                    value={this.state.state}
                   />
                   <input
                     onChange={this.handleInput}
@@ -191,6 +196,7 @@ class CreateEvent extends Component {
                     pattern="[0-9]{5}"
                     placeholder="Zipcode"
                     required=""
+                    value={this.state.zip}
                   />
                 </div>
               </div>

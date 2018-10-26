@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
 
 class Login extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleLogIn()
+    this.props.history.push("/")
+  }
   render() {
     return (
       <div>
@@ -56,14 +62,14 @@ class Login extends Component {
               </div>
 
               {/* Submit Button Big Blue */}
-              <button onClick={this.props.handleLogIn}
+              <Link to="/"><button onClick={this.handleSubmit}
                 class="MuiButtonBase-root-57 MuiButton-root-183 MuiButton-contained-194 MuiButton-containedPrimary-195 MuiButton-raised-197 MuiButton-raisedPrimary-198 MuiButton-fullWidth-208 SignIn-submit-134"
-                tabindex="0"
+
                 type="submit"
               >
                 <span class="MuiButton-label-184">Log In</span>
                 <span class="MuiTouchRipple-root-209" />
-              </button>
+              </button></Link>
             </form>
           </div>
         </main>

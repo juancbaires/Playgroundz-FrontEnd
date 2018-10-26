@@ -8,11 +8,11 @@ const EventList = ({ listOfEvents }) => {
         //    let bgImage = {event.locationImg}
         return (
             <li className="event-card" key={i}>
-                {/* <img className="card-image" src={event.locationImg} alt=""/> */}
-                <div className="bg-image" style={{ "backgroundImage": 'url(' + event.locationImg + ')' }}></div>
+                <img className="card-image" src={event.locationImg} alt=""/>
+                {/* <div className="bg-image" style={{ "backgroundImage": 'url(' + event.locationImg + ')' }}></div> */}
                 <div className="text-wrapper">
                     <p>{event.eventDate}</p>
-                    <h2 className="card-h2">{event.sport} @ {event.locationName}</h2>
+                    <h3 className="card-h3">{event.sport} @ {event.locationName}</h3>
                     <p>{event.address.street}</p>
                     <p>{event.address.city}, {event.address.state} {event.address.zip}</p>
                     <div className="event-button-wrapper">

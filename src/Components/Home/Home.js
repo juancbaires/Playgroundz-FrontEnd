@@ -12,7 +12,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        fetch('https://playgroundz-heroku.herokuapp.com')
+        fetch('http://localhost:4004/')
             .then(res => (res.json()))
             .then(event => this.setState({ event }))
     }

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom"
 class Signup extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleSignUp()
+    this.props.history.push("/")
+  }
   render() {
     return (
       <div>
@@ -58,15 +63,15 @@ class Signup extends Component {
               </div>
 
               {/* submit registeration */}
-              <button
-                onClick={this.props.handleSignUp}
+              <Link to="/"><button
+                onClick={this.handleSubmit}
                 class="MuiButtonBase-root-57 MuiButton-root-183 MuiButton-contained-194 MuiButton-containedPrimary-195 MuiButton-raised-197 MuiButton-raisedPrimary-198 MuiButton-fullWidth-208 SignIn-submit-134"
                 tabindex="0"
                 type="register"
               >
                 <span class="MuiButton-label-184">Register</span>
                 <span class="MuiTouchRipple-root-209" />
-              </button>
+              </button></Link>
             </form>
           </div>
         </main>

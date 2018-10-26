@@ -11,8 +11,8 @@ import axios from "axios"
 import Logout from "./Logout/Logout"
 import decode from "jwt-decode"
 
-const env = 'https://playgroundz-heroku.herokuapp.com';
-// const env = "http://localhost:4004"
+//const env = 'https://playgroundz-heroku.herokuapp.com';
+const env = "http://localhost:4004"
 
 class App extends Component {
   state = {
@@ -54,13 +54,11 @@ class App extends Component {
   };
   // handle signup
 
-  handleSignUp = e => {
-    e.preventDefault();
-    axios
-      .post(`${env}/users/signup`, {
-        email: this.state.email,
-        password: this.state.password
-      })
+  handleSignUp = () => {
+    axios.post(`${env}/users/signup`, {
+      email: this.state.email,
+      password: this.state.password
+    })
       .then(response => {
         localStorage.token = response.data.token
         this.setState({
@@ -77,13 +75,11 @@ class App extends Component {
 
   // handle log in
 
-  handleLogIn = e => {
-    e.preventDefault();
-    axios
-      .post(`${env}/users/login`, {
-        email: this.state.email,
-        password: this.state.password
-      })
+  handleLogIn = () => {
+    axios.post(`${env}/users/login`, {
+      email: this.state.email,
+      password: this.state.password
+    })
       .then(response => {
         console.log(decode(response.data.token))
         localStorage.token = response.data.token
@@ -101,7 +97,7 @@ class App extends Component {
   render() {
     return (
       <div className="appBackground">
-        <Header />
+        <Header isLoggedIn={this.state.isLoggedIn} handleLogIn={this.handleLogIn} handleLogOut={this.handleLogOut} handleSignUp={this.handleSignUp} />
         <main>
           <Switch>
           <Route
@@ -118,38 +114,10 @@ class App extends Component {
               render={() => <CreateEvent event={this.state} />}
             />
             {/* Sign-up Page */}
-            <Route
-              path="/signup"
-              render={() => (
-                <Signup
-                  isLoggedIn={this.state.isLoggedIn}
-                  handleInput={this.handleInput}
-                  handleSignUp={this.handleSignUp}
-                  signUpError={this.state.signUpError}
-                />
-              )}
-            />
+            <Route path="/signup" render={(props) => <Signup {...props} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} signUpError={this.state.signUpError} />} />
             {/* Login Page */}
-            <Route
-              path="/logout"
-              render={() => (
-                <Logout
-                  isLoggedIn={this.state.isLoggedIn}
-                  handleLogOut={this.state.handleLogOut}
-                />
-              )}
-            />
-            <Route
-              path="/login"
-              render={() => (
-                <Login
-                  isLoggedIn={this.state.isLoggedIn}
-                  handleInput={this.handleInput}
-                  handleLogIn={this.handleLogIn}
-                  loginError={this.state.loginError}
-                />
-              )}
-            />
+            <Route path="/logout" render={() => <Logout isLoggedIn={this.state.isLoggedIn} handleLogOut={this.state.handleLogOut} />} />
+            <Route path="/login" render={(props) => <Login {...props} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleLogIn={this.handleLogIn} loginError={this.state.loginError} />} />
             {/* Home Page / main landingpage */}
             <Route path="/" render={() => <Home isLoggedIn={this.state.isLoggedIn} />} />
           </Switch>

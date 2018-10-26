@@ -1,52 +1,16 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import './Header.css';
 
 class Header extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      logstatus: false
-    }
-  }
-
-  login = () => {
-    this.setState({
-      logstatus: true
-    })
-  }
-
-  logout = () => {
-    this.setState({
-      logstatus: false
-    })
-  }
 
   render() {
     return (
       <div>
         <div className="MuiToolbar-root-47 MuiToolbar-regular-49 MuiToolbar-gutters-48 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 MikeLink1">
-          <button
-            className="MuiButtonBase-root-57 MuiIconButton-root-51 MuiIconButton-colorInherit-52 PrimarySearchAppBar-menuButton-3"
-            type="button"
-            aria-label="Open drawer"
-          >
-            <span className="MuiIconButton-label-56">
-              <svg
-                className="MuiSvgIcon-root-60"
-                focusable="false"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                role="presentation"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-              </svg>
-            </span>
-            <span className="MuiTouchRipple-root-130" />
-          </button>
-          <h6 className="MuiTypography-root-69 MuiTypography-h6-86 MuiTypography-colorInherit-98 MuiTypography-noWrap-95 PrimarySearchAppBar-title-4">
+          <Link to="/" style={{ textDecoration: 'none' }}><h6 className="MuiTypography-root-69 PickupGames-header MuiTypography-h6-86 MuiTypography-colorInherit-98 MuiTypography-noWrap-95 PrimarySearchAppBar-title-4">
             Pickup Games
-          </h6>
+          </h6></Link>
           <div className="PrimarySearchAppBar-search-5">
             <div className="PrimarySearchAppBar-searchIcon-6">
               <svg
@@ -91,41 +55,63 @@ class Header extends Component {
               <span className="MuiTouchRipple-root-130" />
             </button>
           </div>
-          
-          {this.state.logstatus ? (
-          <Link to="/logout" onClick={this.logout}>
-            <button class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder" tabindex="0" type="button" aria-haspopup="true">
-              <span class="MuiIconButton-label-154"></span>
-              <span class="MuiTouchRipple-root-246">
-              </span>Logout</button></Link>
-          ) : (
+
+          {this.props.isLoggedIn ? (
             <div>
-              <Link to="/signup">
+              <Link to="/create-event" >
                 <button
-                  className="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder"
-                  tabIndex="0"
+                  class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder"
+                  tabindex="0"
                   type="button"
                   aria-haspopup="true"
                 >
-                  <span className="MuiIconButton-label-154" />
-                  <span className="MuiTouchRipple-root-246" />
-                  SignUp
-                </button>
+                  <span class="MuiIconButton-label-154" />
+                  <span class="MuiTouchRipple-root-246" />
+                  + Event
+            </button>
               </Link>
-              <Link to="/login" onClick={this.login}>
+              <Link to="/" >
                 <button
-                  className="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder"
-                  tabIndex="0"
+                  onClick={this.props.handleLogOut}
+                  class="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder"
+                  tabindex="0"
                   type="button"
                   aria-haspopup="true"
                 >
-                  <span className="MuiIconButton-label-154" />
-                  <span className="MuiTouchRipple-root-246" />
-                  Login
-                </button>
+                  <span class="MuiIconButton-label-154" />
+                  <span class="MuiTouchRipple-root-246" />
+                  Logout
+              </button>
               </Link>
             </div>
-          )}
+          ) : (
+              <div>
+                <Link to="/signup">
+                  <button
+                    className="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder"
+                    tabIndex="0"
+                    type="button"
+                    aria-haspopup="true"
+                  >
+                    <span className="MuiIconButton-label-154" />
+                    <span className="MuiTouchRipple-root-246" />
+                    SignUp
+                </button>
+                </Link>
+                <Link to="/login">
+                  <button
+                    className="MuiButtonBase-root-155 MuiIconButton-root-149 MuiIconButton-colorInherit-150 MuiButton-contained-ezy MuiAppBar-colorPrimary-18 juan-noborder"
+                    tabIndex="0"
+                    type="button"
+                    aria-haspopup="true"
+                  >
+                    <span className="MuiIconButton-label-154" />
+                    <span className="MuiTouchRipple-root-246" />
+                    Login
+                </button>
+                </Link>
+              </div>
+            )}
         </div>
       </div>
     )
