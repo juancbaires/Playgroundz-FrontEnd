@@ -12,7 +12,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:4004/")
+    fetch("https://playgroundz-heroku.herokuapp.com/")
       .then(res => res.json())
       .then(event => this.setState({ event }));
   }
@@ -37,7 +37,7 @@ class Home extends Component {
               path="/event/:id"
               render={props => {
                 let event = this.state.event.find(event => event._id === props.match.params.id);
-                return <Event {...props} event={event} />;
+                return <Event {...props} userID={this.props.userID} event={event} />;
               }}
             />
           </div>

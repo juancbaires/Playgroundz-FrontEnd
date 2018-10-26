@@ -1,0 +1,82 @@
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event-button-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.red {
+    padding: 10px;
+    border-radius: 10%;
+    background-color: orangered;
+    color: white;
+    outline: none;
+}
+
+.blue {
+    padding: 10px;
+    border-radius: 10%;
+    background-color: rgb(52, 52, 255);
+    color: white;
+    outline: none;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+    padding: 0 0 5px 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    background-color: rgba(255,255,255,1);
+    min-width: 300px;
+    max-width: 100%; 
+}
+
+.event-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    background-color: rgb(242, 248, 255);
+}
+
+.card-image {
+   width: 100%;
+   height: 100%;
+}
+.card-h3 {
+    margin: 0;
+}
+
+.text-wrapper {
+    padding: 0 30px 10px 30px;
+}
+.addressStyle {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800px;
+}
+
+.eventSport {
+  letter-spacing: 4px;
+}
+.theConnector {
+  color: red;
+}
+.showTitle {
+ font-size: 50px; 
+}
+.dateStyle {
+  letter-spacing: 4px;
+    font-weight: 800;
+}
+.showTitle {
+  letter-spacing: 5px;
+  font-size: 20px;
+  margin: 0 auto;
+}

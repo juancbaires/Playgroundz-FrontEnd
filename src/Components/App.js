@@ -10,8 +10,7 @@ import axios from "axios"
 import Logout from "./Logout/Logout"
 import decode from "jwt-decode"
 
-//const env = 'https://playgroundz-heroku.herokuapp.com';
-const env = "http://localhost:4004"
+const env = "https://playgroundz-heroku.herokuapp.com"
 
 class App extends Component {
   state = {
@@ -102,7 +101,7 @@ class App extends Component {
             <Route path="/logout" render={() => <Logout isLoggedIn={this.state.isLoggedIn} handleLogOut={this.state.handleLogOut} />} />
             <Route path="/login" render={(props) => <Login {...props} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleLogIn={this.handleLogIn} loginError={this.state.loginError} />} />
             {/* Home Page / main landingpage */}
-            <Route path="/" render={() => <Home isLoggedIn={this.state.isLoggedIn} />} />
+            <Route path="/" render={() => <Home userID={this.state.userID} isLoggedIn={this.state.isLoggedIn} />} />
           </Switch>
         </main>
       </div>
