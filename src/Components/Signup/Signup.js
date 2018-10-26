@@ -35,8 +35,8 @@ class Signup extends Component {
                   <input
                     onChange={this.props.handleInput}
                     aria-invalid="false"
-                    autocomplete="email"
-                    class="MuiInputBase-input-114 MuiInput-input-164"
+                    autoComplete="email"
+                    className="MuiInputBase-input-114 MuiInput-input-164"
                     id="email"
                     name="email"
                     placeholder="Email Address"
@@ -66,7 +66,7 @@ class Signup extends Component {
               <Link to="/"><button
                 onClick={this.handleSubmit}
                 class="MuiButtonBase-root-57 MuiButton-root-183 MuiButton-contained-194 MuiButton-containedPrimary-195 MuiButton-raised-197 MuiButton-raisedPrimary-198 MuiButton-fullWidth-208 SignIn-submit-134"
-                tabindex="0"
+                tabIndex="0"
                 type="register"
               >
                 <span class="MuiButton-label-184">Register</span>

@@ -21,7 +21,9 @@ class CreateEvent extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    Axios.post('http://localhost:4004/new', this.state).then(createdPost => {
+    Axios.post('http://localhost:4004/new',{
+      ...this.state
+    }).then(createdPost => {
       console.log(createdPost)
     })
   }
@@ -59,7 +61,7 @@ class CreateEvent extends Component {
               Create Local Event
           </h1>
             <label className="loginError" />
-            <form className="SignIn-form-133" onSubmit={this.handleSubmit}>
+            <form className="SignIn-form-133">
               <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
                 <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                   {/* Event Date */}
@@ -199,6 +201,7 @@ class CreateEvent extends Component {
 
               {/* Submit Button Big Blue */}
               <button
+                onClick={this.handleSubmit}
                 className="MuiButtonBase-root-57 MuiButton-root-183 MuiButton-contained-194 MuiButton-containedPrimary-195 MuiButton-raised-197 MuiButton-raisedPrimary-198 MuiButton-fullWidth-208 SignIn-submit-134"
                 tabindex="0"
                 type="submit"
