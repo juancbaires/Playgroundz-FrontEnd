@@ -4,10 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 class LandingPage extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
