@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
+
+import ImageUploader from "react-images-upload"
+
 import Axios from "axios";
 // const env = 'https://playgroundz-heroku.herokuapp.com';
 // const env = "http://localhost:4004"
@@ -94,6 +97,7 @@ class CreateEvent extends Component {
                   />
                 </div>
               </div>
+
               <div className="MuiFormControl-root-138 MuiFormControl-marginNormal-139 MuiFormControl-fullWidth-141">
                 <div className="MuiInputBase-root-104 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-formControl-105 MuiInput-formControl-157">
                   {/* Event Location Name */}

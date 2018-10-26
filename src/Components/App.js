@@ -5,6 +5,7 @@ import Header from "./Header/Header";
 import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import LandingPage from "./LandingPage/LandingPage"
 import { Switch, Route } from "react-router-dom";
 import axios from "axios"
 import Logout from "./Logout/Logout"
@@ -45,11 +46,11 @@ class App extends Component {
     localStorage.clear()
   }
   // handle input for form
-  handleInput = (e) => {
+  handleInput = e => {
     this.setState({
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
   // handle signup
 
   handleSignUp = () => {
@@ -64,10 +65,12 @@ class App extends Component {
           userID: decode(localStorage.token)
         })
       })
-      .catch(err => this.setState({
-        signUpError: err.response.data.message
-      }))
-  }
+      .catch(err =>
+        this.setState({
+          signUpError: err.response.data.message
+        })
+      );
+  };
 
   // handle log in
 
@@ -81,20 +84,34 @@ class App extends Component {
         localStorage.token = response.data.token
         this.setState({
           isLoggedIn: true
-        })
+        });
       })
 
       .catch(err => this.setState({
         loginError: err.response.data.message
       }))
   }
+  
+
   render() {
     return (
       <div className="appBackground">
         <Header isLoggedIn={this.state.isLoggedIn} handleLogIn={this.handleLogIn} handleLogOut={this.handleLogOut} handleSignUp={this.handleSignUp} />
         <main>
           <Switch>
-            <Route path="/create-event" render={() => <CreateEvent event={this.state} />} />
+          <Route
+              path="/landingpage"
+              render={() => (
+                <LandingPage
+                  isLoggedIn={this.state.isLoggedIn}
+                  handleLogOut={this.state.handleLogOut}
+                />
+              )}
+            />
+            <Route
+              path="/create-event"
+              render={() => <CreateEvent event={this.state} />}
+            />
             {/* Sign-up Page */}
             <Route path="/signup" render={(props) => <Signup {...props} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} signUpError={this.state.signUpError} />} />
             {/* Login Page */}
