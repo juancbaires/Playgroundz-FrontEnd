@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
 
-import ImageUploader from "react-images-upload"
-
 import Axios from "axios";
 // const env = 'https://playgroundz-heroku.herokuapp.com';
 // const env = "http://localhost:4004"

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import "./Event.css";
+
 class Event extends Component {
   state = {
     _id: "",
@@ -37,8 +39,8 @@ class Event extends Component {
 
     return (
       <div>
-        <div class="event-card">
-          <h1>
+        <div class="event-single-card">
+          <h1 class="eventTitle">
             {this.props.event.sport} at {this.props.event.locationName}
           </h1>
 
@@ -61,18 +63,26 @@ class Event extends Component {
                   {this.props.event.city} {this.props.event.state}{" "}
                   {this.props.event.zip}
                 </p>
-                <p>Going: {this.props.event.rsvps.length}</p>
               </div>
-              <Link to="/">
-                <button class="red" type="submit" onClick={this.deleteEvent}>
-                  Delete
-                </button>
-              </Link>
-              <Link to="/">
-                <button class="blue" type="submit" onClick={this.saveSpot}>
-                  RSVP
-                </button>
-              </Link>
+              <div>
+                <p>Going: {this.props.event.rsvps.length}</p>
+                <div className="buttonContainer">
+                  <Link to="/">
+                    <button
+                      class="red"
+                      type="submit"
+                      onClick={this.deleteEvent}
+                    >
+                      Delete
+                    </button>
+                  </Link>
+                  <Link to="/">
+                    <button class="blue" type="submit" onClick={this.saveSpot}>
+                      RSVP
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

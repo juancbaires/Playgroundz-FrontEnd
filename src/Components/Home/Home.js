@@ -4,7 +4,6 @@ import "./Home.css";
 import Event from "../Event/Event";
 import { Route } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
-import Axios from "axios";
 
 class Home extends Component {
   state = {

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const EventList = ({ listOfEvents }) => {
     const list = listOfEvents.map((event, i) => {
-        console.log(event)
         //    let bgImage = {event.locationImg}
         return (
             <li className="event-card" key={i}>
