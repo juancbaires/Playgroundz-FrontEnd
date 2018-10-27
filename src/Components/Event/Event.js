@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import {withRouter} from 'react-router-dom'
+
 class Event extends Component {
   state = {
     _id: "",
@@ -11,7 +13,7 @@ class Event extends Component {
       "https://playgroundz-heroku.herokuapp.com/delete/" + this.props.event._id
     )
       .then(res => {
-        console.log(res);
+        this.props.history.push('/')
       })
       .catch(err => {
         console.log(err);
@@ -94,4 +96,4 @@ Event.defaultProps = {
   }
 };
 
-export default Event;
+export default withRouter(Event);
