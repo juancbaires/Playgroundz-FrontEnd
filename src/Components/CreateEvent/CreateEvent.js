@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
+import {withRouter} from 'react-router-dom'
 
 import ImageUploader from "react-images-upload"
 
@@ -28,6 +29,7 @@ class CreateEvent extends Component {
       ...this.state
     }).then(createdPost => {
       console.log(createdPost)
+      this.props.history.push('/')
     })
   }
 
@@ -221,4 +223,4 @@ class CreateEvent extends Component {
   };
 }
 
-export default CreateEvent;
+export default withRouter(CreateEvent);
