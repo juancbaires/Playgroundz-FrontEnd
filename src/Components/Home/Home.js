@@ -17,9 +17,11 @@ class Home extends Component {
       .then(event => this.setState({ event }));
   }
 
-  // const events = props.event;
-  // const listEvents = events.map(evt => {
+  // add a metod to search by sport
 
+  handleChange = (e) => {
+
+  }
   render() {
     const isLoggedIn = this.props.isLoggedIn;
     return (
@@ -42,16 +44,16 @@ class Home extends Component {
             />
           </div>
         ) : (
-          <div>
-            <LandingPage />
-            <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
-            <Route
-              exact
-              path="/"
-              render={() => <EventList listOfEvents={this.state.event} />}
-            />
-          </div>
-        )}
+            <div>
+              <LandingPage />
+              <h1 className="upcoming-games-header">Upcoming Pickup Games</h1>
+              <Route
+                exact
+                path="/"
+                render={() => <EventList listOfEvents={this.state.event} />}
+              />
+            </div>
+          )}
       </div>
     );
   }

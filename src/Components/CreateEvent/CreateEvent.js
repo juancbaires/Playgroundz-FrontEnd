@@ -24,7 +24,7 @@ class CreateEvent extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    Axios.post('https://playgroundz-heroku.herokuapp.com/new',{
+    Axios.post('https://playgroundz-heroku.herokuapp.com/new', {
       ...this.state
     }).then(createdPost => {
       console.log(createdPost)
