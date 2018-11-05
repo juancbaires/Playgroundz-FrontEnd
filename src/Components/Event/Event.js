@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
-import {withRouter} from 'react-router-dom'
-
+import { withRouter } from 'react-router-dom'
+import './Event.css'
 class Event extends Component {
   state = {
     _id: "",
@@ -22,9 +22,9 @@ class Event extends Component {
   saveSpot = () => {
     Axios.post(
       "https://playgroundz-heroku.herokuapp.com/event/" +
-        this.props.event._id +
-        "/" +
-        this.props.userID.id
+      this.props.event._id +
+      "/" +
+      this.props.userID.id
     )
       .then(res => {
         console.log(res);
@@ -38,26 +38,26 @@ class Event extends Component {
     console.log(this.props);
 
     return (
-      <div>
-        <div class="event-card">
+      <div className="show-view">
+        <div className="event-show-card">
           <h1>
             {this.props.event.sport} at {this.props.event.locationName}
           </h1>
 
           <img
-            className="card-image"
+            className="card-show-image"
             src={this.props.event.locationImg}
             alt=""
           />
-          <div class="text-wrapper">
-            <p class="dateStyle">{this.props.event.eventDate}</p>
-            <div class="eventTitle">
+          <div className="text-wrapper">
+            <p className="dateStyle">{this.props.event.eventDate}</p>
+            <div className="eventTitle">
               <h3 className="card-h3">
-                <span class="eventSport">{this.props.event.sport}</span>
-                <span class="theConnector"> @ </span>
-                <span class="eventSport">{this.props.event.locationName}</span>
+                <span className="eventSport">{this.props.event.sport}</span>
+                <span className="theConnector"> @ </span>
+                <span className="eventSport">{this.props.event.locationName}</span>
               </h3>
-              <div class="addressStyle">
+              <div className="addressStyle">
                 <p>{this.props.event.street}</p>
                 <p>
                   {this.props.event.city} {this.props.event.state}{" "}
@@ -66,12 +66,12 @@ class Event extends Component {
                 <p>Going: {this.props.event.rsvps.length}</p>
               </div>
               <Link to="/">
-                <button class="red" type="submit" onClick={this.deleteEvent}>
+                <button className="red" type="submit" onClick={this.deleteEvent}>
                   Delete
                 </button>
               </Link>
               <Link to="/">
-                <button class="blue" type="submit" onClick={this.saveSpot}>
+                <button className="blue" type="submit" onClick={this.saveSpot}>
                   RSVP
                 </button>
               </Link>

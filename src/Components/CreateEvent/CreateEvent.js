@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import "./CreateEvent.css";
 import SignUp from "./CreateEvent.png";
-import {withRouter} from 'react-router-dom'
-
-import ImageUploader from "react-images-upload"
-
+import { withRouter } from 'react-router-dom'
 import Axios from "axios";
+
 // const env = 'https://playgroundz-heroku.herokuapp.com';
 // const env = "http://localhost:4004"
 
