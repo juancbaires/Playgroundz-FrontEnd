@@ -9,6 +9,7 @@ import { Switch, Route } from "react-router-dom";
 import axios from "axios"
 import Logout from "./Logout/Logout"
 import decode from "jwt-decode"
+import SimpleMap from "./SimpleMap/SimpleMap"
 
 //const env = 'https://playgroundz-heroku.herokuapp.com';
 const env = "http://localhost:4004"
@@ -95,6 +96,7 @@ class App extends Component {
         <Header isLoggedIn={this.state.isLoggedIn} handleLogIn={this.handleLogIn} handleLogOut={this.handleLogOut} handleSignUp={this.handleSignUp} />
         <main>
           <Switch>
+            <Route path="/map" render={() => <SimpleMap />} />
             <Route path="/create-event" render={() => <CreateEvent event={this.state} />} />
             {/* Sign-up Page */}
             <Route path="/signup" render={(props) => <Signup {...props} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} signUpError={this.state.signUpError} />} />
