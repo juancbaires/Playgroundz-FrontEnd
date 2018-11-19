@@ -6,6 +6,9 @@
 .loginError{
   color:red;
 }
+body, html{
+  font-family: 'Montserrat';
+}
 .signUpError {
   color: red;
 }
