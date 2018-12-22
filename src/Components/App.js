@@ -11,15 +11,15 @@ import axios from "axios"
 import Logout from "./Logout/Logout"
 import decode from "jwt-decode"
 
-const env = "https://playgroundz-heroku.herokuapp.com"
-
+// const env = "https://playgroundz-heroku.herokuapp.com"
+const env = "http://localhost:4004"
 class App extends Component {
   state = {
     email: "",
     password: "",
     isLoggedIn: false,
-    signUpError: null,
-    loginError: null,
+    signUpError: "",
+    loginError: "",
     userID: null,
   }
   componentDidMount() {
@@ -80,18 +80,27 @@ class App extends Component {
       password: this.state.password
     })
       .then(response => {
-        console.log(decode(response.data.token))
         localStorage.token = response.data.token
         this.setState({
           isLoggedIn: true
         });
+        this.props.history.push('/')
       })
 
       .catch(err => this.setState({
         loginError: err.response.data.message
       }))
   }
-  
+  //   then(response => {
+  //     localStorage.token = response.data.token
+  //     this.setState({ isLoggedIn: true, loginError: '' });
+  //     this.props.history.push('/');
+  //   })
+
+  //   .catch(err => this.setState({
+  //     loginError: 'Wrong username/password'
+  //   }))
+  // }
 
   render() {
     return (
@@ -99,7 +108,7 @@ class App extends Component {
         <Header isLoggedIn={this.state.isLoggedIn} handleLogIn={this.handleLogIn} handleLogOut={this.handleLogOut} handleSignUp={this.handleSignUp} />
         <main>
           <Switch>
-          <Route
+            <Route
               path="/landingpage"
               render={() => (
                 <LandingPage

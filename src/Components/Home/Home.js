@@ -4,7 +4,8 @@ import "./Home.css";
 import Event from "../Event/Event";
 import { Route } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
-
+const env = 'http://localhost:4004/'
+// const env = "https://playgroundz-heroku.herokuapp.com"
 
 class Home extends Component {
   state = {
@@ -12,7 +13,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    fetch("https://playgroundz-heroku.herokuapp.com/")
+    fetch(`${env}`)
       .then(res => res.json())
       .then(event => this.setState({ event }));
   }
@@ -20,7 +21,7 @@ class Home extends Component {
   // !!TODO!! add a metod to search by sport
   handleChange = (e) => {
     if (e.target.value === '') {
-      fetch("https://playgroundz-heroku.herokuapp.com/")
+      fetch(`${env}`)
         .then(res => res.json())
         .then(event => this.setState({ event }));
     } else {
